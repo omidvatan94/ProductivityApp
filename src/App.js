@@ -3,22 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount(){
+    fetch("https://api.darksky.net/forecast/a10e2251ba5b1dc81cc591194eaa43b7/37.8267,-122.4233", {
+      mode: "no-cors"
+    })
+    .then(res => res.json())
+    .then(console.log)
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+
         </header>
       </div>
     );
