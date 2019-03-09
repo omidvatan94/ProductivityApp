@@ -15,7 +15,16 @@ class NewNote extends PureComponent {
 
   addNote = (note, e) => {
     e.preventDefault()
-    console.log(note)
+    fetch("http://localhost:3000/notes", {
+      method: "POST",
+      headers: {
+         "Content-Type": "application/json"
+      },
+      body: JSON.stringify(note)
+    })
+    .then(res => res.json())
+    .then(console.log)
+
   }
 
 
