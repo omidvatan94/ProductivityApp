@@ -18,8 +18,8 @@ class NewNote extends PureComponent {
     fetch("http://localhost:3000/notes", {
       method: "POST",
       headers: {
-         "Content-Type": "application/json",
-         'Access-Control-Allow-Origin'
+         "Content-Type": "application/json"},
+         {'Access-Control-Allow-Origin'
       },
       body: JSON.stringify(note)
     })
